@@ -72,7 +72,7 @@
 // console.log(`Server started: http://127.0.0.1:7700`);
 
 
-require("dotenv").config(); // Load environment variables from .env file
+require("dotenv").config(({ path: "../.env" })); // Load environment variables from .env file
 var express = require("express");
 var cors = require("cors");
 var mongoClient = require("mongodb").MongoClient;
@@ -144,6 +144,7 @@ app.delete("/delete/:id", (req, res) => {
     }).catch(err => console.error(err));
 });
 
+console.log(process.env.PORT)
 const PORT = process.env.PORT || 3000; // Use environment variable
 app.listen(PORT, () => {
     console.log(`Server started: http://127.0.0.1:${PORT}`);
