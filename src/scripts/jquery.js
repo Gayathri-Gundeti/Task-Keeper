@@ -2,7 +2,7 @@ $(function () {
     function LoadGetdata() {
         $.ajax({
             method: 'get',
-            url: ' http://127.0.0.1:7700/get-items',
+            url: 'https://to-do-list-1-psys.onrender.com/get-items',
             success: (response => {
                 response.map(data => {
                     $(`<div class="d-flex justify-content-between " id="get-data-style" >
