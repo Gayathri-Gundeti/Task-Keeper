@@ -2,7 +2,7 @@ $(function () {
     function LoadGetdata() {
         $.ajax({
             method: 'get',
-            url: 'https://to-do-list-1-psys.onrender.com/get-items',
+            url: 'https://jquerytodo-i4kk.onrender.com/get-items',
             success: (response => {
                 response.map(data => {
                     $(`<div class="d-flex justify-content-between " id="get-data-style" >
@@ -30,7 +30,7 @@ $(function () {
     $(document).on("click", "#btnEdit", (e) => {
         $.ajax({
             method: 'get',
-            url: ` http://127.0.0.1:7700/get-items/${e.target.value}`,
+            url: ` https://jquerytodo-i4kk.onrender.com/get-items/${e.target.value}`,
             success: (response => {
                 $("#edit-id").val(response[0].Id);
                 $("#edit-item").val(response[0].Item);
@@ -45,7 +45,7 @@ $(function () {
         }
         $.ajax({
             method: 'put',
-            url:` http://127.0.0.1:7700/update/${$("#edit-id").val()}`,
+            url:` https://jquerytodo-i4kk.onrender.com/update/${$("#edit-id").val()}`,
             data: list,
             success: () => {
                 alert("Updated details successfully");
@@ -60,7 +60,7 @@ $(function () {
         if (choice == true) {
             $.ajax({
                 method: "delete",
-                url: ` http://127.0.0.1:7700/delete/${id}`,
+                url: `https://jquerytodo-i4kk.onrender.com/delete/${id}`,
                 success: () => {
                     $("#get-data").html("");
                     LoadGetdata();
@@ -81,7 +81,7 @@ $(function () {
    function LoadAddData() {
         $.ajax({
             method: 'get',
-            url: ' http://127.0.0.1:7700/get-items',
+            url: ' https://jquerytodo-i4kk.onrender.com/get-items',
             success: (response) => {
                 response.map(data => {
                     $(`
@@ -102,7 +102,7 @@ $(function () {
         };
         $.ajax({
             method: 'post',
-            url: ' http://127.0.0.1:7700/list-items',
+            url: 'https://jquerytodo-i4kk.onrender.com/list-items',
             data: list,
             success: () => {
                 alert("Details Added..")
