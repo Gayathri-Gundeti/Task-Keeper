@@ -1,6 +1,6 @@
 // api/index.js
 
-require("dotenv").config({path:"../.env"}); // Load environment variables from .env file
+require("dotenv").config(); // Load environment variables from .env file
 
 const express = require("express");
 const cors = require("cors");
@@ -88,6 +88,11 @@ app.delete("/api/delete/:id", async (req, res) => {
     console.error(err);
     res.status(500).send("Error deleting item");
   }
+});
+
+const PORT = process.env.PORT || 3000; // Default to port 3000 if not specified
+app.listen(PORT, () => {
+  console.log(`Server running at http://localhost:${PORT}`);
 });
 
 module.exports = app;
