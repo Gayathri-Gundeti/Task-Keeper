@@ -1,0 +1,79 @@
+#get-data-style{
+    border: 1px solid #ffc107;
+    border-radius: 5px;
+    margin: 15px;
+    padding: 3px;
+}
+#get-data-style:hover{
+    background-color: #ffc107;
+}
+#input-add-data{
+    border: 1px solid red;
+    border-radius: 5px;
+    margin: 15px;
+    padding: 3px;
+}
+#input-add-data:hover{
+    background-color: red;
+    color: white;
+}
+#background{
+    background-image: url(../../bg-new.webp);
+    background-size: cover ;
+    height: 100vh;
+    background-repeat: no-repeat;
+    opacity: 5px;
+}
+#form-data{
+    background-color: white;
+    font-family: exotic350 dmbd bt;
+    height: 600px;
+    overflow: auto;
+    width: 50%;
+    
+}
+#title{
+    font-family: bodoni mt;
+    font-family: bernard mt;
+    color: red;
+    
+}
+.all-red-btn{
+    background-color: red;
+    color: white;
+}
+.all-red-btn:hover{
+    background-color: red;
+    color: white;
+}
+
+#sub-title{
+   color: #ffc107;
+   font-size: 18px;
+   font-family: bodoni mt;
+}
+
+@media screen and (max-width:576px){
+    #get-data-style{
+        border: 1px solid #ffc107;
+        border-radius: 5px;
+        margin: 10px 0px;
+        padding: 3px;
+        font-size: 15px;
+    }
+    #form-data{
+        width: 100%;
+    }
+    #icons{
+        display: flex;
+    }
+    #txtId{
+        font-size:9px;
+        padding-left: -18px;
+    }
+    #txtItem{
+        font-size: 12px;
+    }
+   
+
+}
