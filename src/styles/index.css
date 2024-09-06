@@ -18,7 +18,7 @@
     color: white;
 }
 #background{
-    background-image: url(../../bg-new.webp);
+    background-image: url(../../bg.jpg);
     background-size: cover ;
     height: 100vh;
     background-repeat: no-repeat;
