@@ -25,6 +25,7 @@
     background-image: url(../../bg.jpg);
     background-size: cover ;
     height: 100vh;
+    background-attachment: fixed;
     background-repeat: no-repeat;
 }
 #form-data{
@@ -57,6 +58,9 @@
 }
 
 @media screen and (max-width:576px){
+    .container{
+        height: auto;
+    }
     #get-data-style{
         border: 1px solid #ffc107;
         border-radius: 5px;
