@@ -1,3 +1,7 @@
+*{
+    margin: 0;
+    padding: 0;
+}
 #get-data-style{
     border: 1px solid #ffc107;
     border-radius: 5px;
@@ -22,7 +26,6 @@
     background-size: cover ;
     height: 100vh;
     background-repeat: no-repeat;
-    opacity: 5px;
 }
 #form-data{
     background-color: white;
