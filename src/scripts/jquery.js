@@ -97,33 +97,52 @@ $(function () {
             }
         });
     }
+  function VerifyIdAndAddItem(id, item) {
+    $("#add-data").html("Loading...");
+    $.ajax({
+        method: "get",
+        url: "https://jquerytodo-i4kk.onrender.com/get-items",
+        success: (data) => {
+            var matchId = data.find(existingItem => existingItem.Id == id); // Use `==` for comparison
+            if (matchId) {
+                alert("Id is taken...Use a different Id...");
+            } else {
+                var list = {
+                    Id: id,
+                    Item: item
+                };
+                $.ajax({
+                    method: 'post',
+                    url: 'https://jquerytodo-i4kk.onrender.com/list-items',
+                    data: list,
+                    success: () => {
+                        alert("Details Added..");
+                        $("#add-data").html("");
+                        $("#txtId").val("");
+                        $("#txtItem").val("");
+                        LoadAddData();
+                    },
+                    error: () => {
+                        alert("Failed to add details.");
+                    }
+                });
+            }
+        }
+    });
+}
 
     $(document).on("click", "#input-add", () => {
     var id = $("#txtId").val().trim();
     var item = $("#txtItem").val().trim();
         if (id === "" || item === "") {
             alert("Please provide both fields");
-        } else {
-            var list = {
-                Id: $("#txtId").val(),
-                Item: $("#txtItem").val(),
-            };
-            $.ajax({
-                method: 'post',
-                url: 'https://jquerytodo-i4kk.onrender.com/list-items',
-                data: list,
-                success: () => {
-
-                    alert("Details Added..")
-                    $("#add-data").html("");
-                    $("#txtId").val("");
-                    $("#txtItem").val("");
-                    LoadAddData();
-
-                }
-
-            })
+        } 
+        else{
+            VerifyIdAndAddItem(id,item);
+            
         }
+           
 
     })
 })
+
